@@ -129,7 +129,7 @@ class MoneyManager extends Component {
               Welcome back to your
               <span className="money-manager-text"> Money Manager</span>
             </p>
-            <button>switch</button>
+            <button>toggle</button>
           </div>
           <MoneyDetails
             balanceAmount={balanceAmount}
