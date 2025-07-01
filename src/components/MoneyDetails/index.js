@@ -1,5 +1,11 @@
 import './index.css'
 
+// Utility function to convert INR to USD (1 USD = 83 INR approximately)
+const convertToUSD = (inrAmount) => {
+  const USD_TO_INR_RATE = 83;
+  return (inrAmount / USD_TO_INR_RATE).toFixed(2);
+}
+
 const MoneyDetails = props => {
   const {balanceAmount, incomeAmount, expensesAmount} = props
 
@@ -14,7 +20,7 @@ const MoneyDetails = props => {
         <div>
           <p className="details-text">Your Balance</p>
           <p className="details-money" data-testid="balanceAmount">
-            Rs {balanceAmount}
+            $ {convertToUSD(balanceAmount)}
           </p>
         </div>
       </div>
@@ -27,7 +33,7 @@ const MoneyDetails = props => {
         <div>
           <p className="details-text">Your Income</p>
           <p className="details-money" data-testid="incomeAmount">
-            Rs {incomeAmount}
+            $ {convertToUSD(incomeAmount)}
           </p>
         </div>
       </div>
@@ -40,7 +46,7 @@ const MoneyDetails = props => {
         <div>
           <p className="details-text">Your Expenses</p>
           <p className="details-money" data-testid="expensesAmount">
-            Rs {expensesAmount}
+            $ {convertToUSD(expensesAmount)}
           </p>
         </div>
       </div>
